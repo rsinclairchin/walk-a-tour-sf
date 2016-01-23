@@ -5,17 +5,17 @@ get '/users' do
 end
 
 #new user form
-get '/users/new' do 
+get '/users/new' do
 	erb :'/users/user_new'
 end
 
 #create new user
-post '/users' do 
+post '/users' do
 	user = User.new(username: params[:username], email: params[:email])
 	user.password = params[:password]
 	if user.save
 		session[:id] = user.id
-		redirect '/'
+		redirect '/categories'
 	else
 		status 400
 		flash[:errors] = user.errors.full_messages
@@ -35,7 +35,7 @@ get '/users/:id' do
 end
 
 #submit user edit
-put '/users/:id' do 
+put '/users/:id' do
 	user = User.find(params[:id])
 	user.username = params[:username]
 	user.email = params[:email]
@@ -48,7 +48,7 @@ put '/users/:id' do
 end
 
 #delete user
-delete '/users/:id' do 
+delete '/users/:id' do
 	User.find(params[:id]).destroy
 	session[:id] = nil
 	current_user = nil
