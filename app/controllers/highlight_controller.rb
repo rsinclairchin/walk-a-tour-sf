@@ -22,7 +22,7 @@ get '/highlights/:id' do
 end
 
 #edit return an HTML form for editing a photo
-get '/highlights/:id/edit'
+get '/highlights/:id/edit' do
   erb '/edit'
 end
 
@@ -33,7 +33,7 @@ put '/highlights/:id' do
 end
 
 #destroy  delete a specific photo
-destroy '/highlights/:id' do
+delete '/highlights/:id' do
   highlight = Highlight.find(params[:id])
   highlight.destroy
   redirect
