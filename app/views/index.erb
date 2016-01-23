@@ -1,6 +1,6 @@
-<!--splash page -->
 
-<div class="container">
+
+<div class="container" class="hidden">
   <%if current_user  %>
     <h1>Logged in as <%=@current_user.username %></h1>
     <a href='/users/<%=current_user.id%>/edit'>Edit User</a>
@@ -14,10 +14,8 @@
   <%end %>
 </div>
 
-<div class="container">
-  <div class="jumbotron">
-  <!-- image -->
-    <h1>Walk-A-Tour SF</h1>
-  </div>
-  
+<div class="container" id="splash" class="center" >
+  <h1>Hello</h1>
+  <img src="images/logo.png">
+
 </div>
