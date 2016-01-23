@@ -6,7 +6,7 @@ class CreateTours < ActiveRecord::Migration
       t.integer :duration
       t.float :distance
       t.integer :rating
-      t.references (:user)
+      t.references :user
       t.timestamps
     end
   end
