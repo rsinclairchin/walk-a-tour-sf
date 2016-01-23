@@ -18,7 +18,7 @@ end
 
 #show display a specific photo
 get '/highlights/:id' do
-  @tour = Tour.find(params)
+  @highlight = Highlight.find(params)
 end
 
 #edit return an HTML form for editing a photo
@@ -28,13 +28,13 @@ end
 
 #update update a specific photo
 put '/highlights/:id' do
-  Tour.update(params)
+  Highlight.update(params)
   redirect
 end
 
 #destroy  delete a specific photo
 destroy '/highlights/:id' do
-  tour = Tour.find(params[:id])
-  tour.destroy
+  highlight = Highlight.find(params[:id])
+  highlight.destroy
   redirect
 end
