@@ -1,22 +1,4 @@
-#index  display a list of all highlights
-get '/highlights' do
-  @highlights = Highlight.all
-  erb :index
-end
-
-#new  return an HTML form for creating a new photo
-get '/highlights/new' do
-  erb :new
-end
-
-#create create a new photo
-post '/highlights' do
-  Highlight.create(params)
-  redirect
-end
-
-
-#show display a specific photo
+#show display a specific highlight
 get '/highlights/:id' do
   @highlight = Highlight.find(params)
 end
