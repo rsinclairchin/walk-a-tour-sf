@@ -1,3 +1,4 @@
 class Tour < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :highlights
+  belongs_to :user
 end
