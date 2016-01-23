@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-	validates :username, :email, :password_hash, presence: true
+	has_many :tours, :highlights
+
+	validates :first_name, :last_name, :email, :password_hash, presence: true
 	validates :email, uniqueness: true
 
 	include BCrypt

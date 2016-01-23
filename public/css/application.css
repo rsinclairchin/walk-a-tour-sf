@@ -1,9 +1,35 @@
+/* general css */
+.body {
+	max-width: 750px;
+}
+
 .container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  padding-right: 0px;
+  padding-left: 0px;
 }
-th {
-  text-align: left;
+
+.img-responsive {
+
 }
+
+/* index/splash page */
+
+.container.hidden {
+	display: none;
+}
+
+.container#splash {
+	height: 100vh;
+	background: url("/images/background.png")no-repeat center center fixed;
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+}
+
+.container#splash img {
+	width: 100px;
+	height: 100px;
+}
+/* homepage */
+
