@@ -1,7 +1,36 @@
-get '/homepage' do
-	erb :'tours/homepage'
+
+#index  display a list of all tours
+get '/categories' do
+  @tours = Tour.all
+  @categories = []
+  @tours.each do |tour|
+    tour.highlights.each do |highlight|
+      @categories << highlight.category
+    end
+  end
+  erb :'categories/show'
 end
 
-put '/users/:id' do
-	
+get '/tours' do
+  @tours = Tours.find_by(params)
+  erb :'tours/index'
+end
+
+get '/tours/:id' do
+  @tour = Tour.find(params[:id])
+  erb :'tours/show'
+end
+
+get '/tours/map' do
+
+end
+
+get '/tours/:id/end' do
+  @tour = Tour.find(params[:id])
+  erb :'tours/end'
+end
+
+put '/tours/:id' do
+  @tour = Tour.find(params[:id])
+  @tour.update_attributes(rating: params[:rating])
 end
