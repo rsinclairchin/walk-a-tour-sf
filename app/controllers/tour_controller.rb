@@ -21,8 +21,8 @@ get '/tours/:id' do
   erb :'tours/show'
 end
 
-get '/tours/map' do
-
+get '/map' do
+  erb :map
 end
 
 get '/tours/:id/end' do
