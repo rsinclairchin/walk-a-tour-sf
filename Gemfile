@@ -23,3 +23,5 @@ group :test do
   gem 'faker', '~>1.6.1'
   gem 'rspec'
 end
+
+gem 'clyp'

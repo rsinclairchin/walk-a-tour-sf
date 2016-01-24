@@ -50,6 +50,5 @@ Highlight.create(title: "Dev Bootcamp",
                    address: "661 Howard Street, San Francisco, CA",
                    latitude: 37.7853795,
                    longitude: -122.4016937,
-
                    user_id: 1,
                    tour_id: 1)

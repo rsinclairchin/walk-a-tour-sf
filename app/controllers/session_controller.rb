@@ -13,7 +13,7 @@ post '/sessions' do
 	else
 		flash[:errors] = ['Incorrect Username or Password']
 		status 400
-		redirect '/sessions/new'
+		redirect '/categories'
 	end
 end
 
