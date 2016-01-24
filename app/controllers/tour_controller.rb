@@ -24,6 +24,7 @@ get '/tours/:id' do
 end
 
 get '/map' do
+  @highlights = Highlight.all
   erb :map
 end
 
