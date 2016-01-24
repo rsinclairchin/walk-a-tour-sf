@@ -94,7 +94,7 @@ DEPENDENCIES
   activesupport (~> 4.1)
   bcrypt
   clyp
-  faker
+  faker (~> 1.6.1)
   geocoder
   pg
   rack-flash3
