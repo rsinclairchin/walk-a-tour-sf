@@ -18,8 +18,49 @@
   <script src="/js/application.js"></script>
 
   <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+
+
 <script>
-function initialize() {
+
+
+// function initialize() {
+//   var mapProp = {
+//     center:new google.maps.LatLng(37.7833,-122.4167),
+//     zoom:11,
+//     mapTypeId:google.maps.MapTypeId.ROADMAP
+//   };
+//   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+// }
+
+// function makeMarkers() {
+//   var markers = []
+
+  // var highlights = "#{@highlights}"
+
+//   for (i=0; i< highlights.length; i++) {
+//     console.log( highlights.title)
+//   }
+
+//   var marker = new google.maps.Marker({
+//     position:new google.maps.LatLng(37.7833,-122.4167)
+//   });
+
+//   marker.setMap(map);
+
+// }
+
+// google.maps.event.addDomListener(window, 'load', initialize);
+// google.maps.event.addDomListener(window, 'load', makeMarkers);
+
+
+</script>
+
+<% highlights = Highlight.all %>
+  <script>
+
+  function initialize() {
   var mapProp = {
     center:new google.maps.LatLng(37.7833,-122.4167),
     zoom:11,
@@ -27,17 +68,29 @@ function initialize() {
   };
   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
-  var marker = new google.maps.Marker({
-    position:new google.maps.LatLng(37.7833,-122.4167)
-  });
 
-  marker.setMap(map);
+
+  var markers = []
+  <% highlights.each do |hl| %>
+  <% if hl.latitude.is_a?(Float) %>
+    var marker=new google.maps.Marker({
+      position: new google.maps.LatLng(<%=hl.latitude%>,<%=hl.longitude%>)
+     })
+    markers.push(marker)
+    // console.log("<%= hl.latitude %>")
+    // console.log("<%= hl.longitude %>")
+  <% end %>
+  <% end %>
+
+    for (i=0;i<markers.length;i++){
+      markers[i].setMap(map)
+    }
+
 }
+    google.maps.event.addDomListener(window, 'load', initialize);
 
-google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
 
-
-</script>
 
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
