@@ -1,6 +1,7 @@
 #show display a specific highlight
 get '/highlights/:id' do
   @highlight = Highlight.find(params)
+  erb :'highlights/show'
 end
 
 #edit return an HTML form for editing a photo
