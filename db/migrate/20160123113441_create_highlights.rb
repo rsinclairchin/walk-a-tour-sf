@@ -7,7 +7,8 @@ class CreateHighlights < ActiveRecord::Migration
       t.float :longitude
       t.string :audio
       t.integer :picture
-      t.references (:user, :tour)
+      t.references :user
+      t.references :tour
       t.timestamps
       geocoded_by :full_street_address
       after_validation :geocode
