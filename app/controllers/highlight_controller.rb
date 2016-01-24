@@ -1,31 +1,16 @@
 #show display a specific highlight
 get '/highlights/:id' do
   @highlight = Highlight.find(params[:id])
+  @audio = @highlight.audio
   erb :'highlights/show'
 end
 
-post '/highlights' do
+put '/highlights/:id' do
+  @highlight = Highlight.find(params[:id])
   @track = Clyp::TrackUpload.new(file: File.new(params[:audio][:tempfile]), title: 'Test', description: '#cool test')
   p @track
-  p "  ! " * 30
-  erb :'highlights/show'
+  @highlight.update_attributes(audio: @track)
+  redirect "/highlights/#{@highlight.id}"
 end
 
-#edit return an HTML form for editing a highlight
-get '/highlights/:id/edit' do
-  erb '/edit'
-end
-
-#update update a specific highlight
-put '/highlights/:id' do
-  Highlight.update(params)
-  redirect
-end
-
-#destroy  delete a specific highlight
-delete '/highlights/:id' do
-  highlight = Highlight.find(params[:id])
-  highlight.destroy
-  redirect
-end
 

@@ -42,18 +42,19 @@
     <div class="col-xs-10" style="text-align: center;">
 
       <div class="jumbotron">
-        <h1>A Local Coffee House</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <h1><%= @highlight.title %></h1>
+        <p><%= @highlight.address %></p>
 
         <!-- Audio submission form -->
-      <% if @track %>
+      <% if @audio %>
         <audio controls>
           <source src="http://a.clyp.it/313mozfo.mp3" type="audio/ogg">
-          <source src=<%= @track.file %> type="audio/mpeg">
+          <source src=<%= @audio %> type="audio/mpeg">
         </audio>
       <% end %>
 
-      <p> Submit your Highlight here </p> <form action="/highlights" enctype='multipart/form-data' method="post">
+      <p> Submit your Highlight here </p> <form action="/highlights/<%= @highlight.id %>" enctype='multipart/form-data' method="post">
+          <input type="hidden" name="_method" value="put">
           <input type="file" name="audio">
           <input type="submit" class="btn btn-primary btn-lg" value="Submit Audio">
       </form>

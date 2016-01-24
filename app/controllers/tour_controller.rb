@@ -12,12 +12,14 @@ get '/categories' do
 end
 
 get '/tours' do
-  @tours = Tours.find_by(params)
+  @tours = Tour.find_by(params)
   erb :'tours/index'
 end
 
 get '/tours/:id' do
+  @highlight = Highlight.find_by(tour_id: params[:id])
   @tour = Tour.find(params[:id])
+  @highlights = @tour.highlights
   erb :'tours/show'
 end
 
