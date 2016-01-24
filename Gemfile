@@ -20,6 +20,6 @@ gem 'shotgun'
 gem 'geocoder'
 
 group :test do
-  gem 'faker'
+  gem 'faker', '~>1.6.1'
   gem 'rspec'
 end

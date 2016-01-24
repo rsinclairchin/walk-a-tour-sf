@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-	has_many :tours, :highlights
+	has_many :tours
+	has_many :highlights
 
 	validates :first_name, :last_name, :email, :password_hash, presence: true
 	validates :email, uniqueness: true

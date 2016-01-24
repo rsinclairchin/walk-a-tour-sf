@@ -73,7 +73,7 @@ DEPENDENCIES
   activerecord (~> 4.1)
   activesupport (~> 4.1)
   bcrypt
-  faker
+  faker (~> 1.6.1)
   geocoder
   pg
   rack-flash3
