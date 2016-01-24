@@ -5,7 +5,7 @@
 		<div class="col-xs-1">&nbsp;</div>
 		<div class="col-xs-10" style="text-align: center;">
 
-			<div class="row" style="height:10px;">&nbsp;</div>    
+			<div class="row" style="height:10px;">&nbsp;</div>
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="input-group">
@@ -16,7 +16,7 @@
 					</div><!-- /input-group -->
 				</div><!-- /.col-lg-6 -->
 			</div><!-- /.row -->
-			<div class="row" style="height:10px;">&nbsp;</div>    
+			<div class="row" style="height:10px;">&nbsp;</div>
 
 		</div>
 		<div class="col-xs-1">&nbsp;</div>
@@ -35,16 +35,17 @@
 
 
 
-	<div class="row" style="height:20px;">&nbsp;</div>    
+	<div class="row" style="height:20px;">&nbsp;</div>
 
 	<div class="row" style="">
 		<div class="col-xs-1" style="">&nbsp;</div>
 		<div class="col-xs-10" style="text-align: center;">
 
 			<div class="jumbotron">
-				<h1>Fillmore Coffee Houses Tour</h1>
-				<p>Tour Length: 1.2 miles</p>
-				<p><a class="btn btn-primary btn-lg" href="#" role="button">START TOUR</a></p>
+				<h1><%= @tour.title %></h1>
+				<p>Tour Length: <%= @tour.duration %></p>
+				<p>Tour Distance: <%= @tour.distance %></p>
+				<p><a class="btn btn-primary btn-lg" href="/highlights/<%= @highlight.id%>" role="button">START TOUR</a></p>
 				<img src="/images/star_on.png" style="width:20px;">
 				<img src="/images/star_on.png" style="width:20px;">
 				<img src="/images/star_off.png" style="width:20px;">
@@ -67,7 +68,7 @@
 
 
 
-	<div class="row" style="height:0px;">&nbsp;</div>    
+	<div class="row" style="height:0px;">&nbsp;</div>
 
 	<div class="row" style="">
 		<div class="col-xs-1" style="">&nbsp;</div>
@@ -78,18 +79,17 @@
   <a href="#" class="list-group-item disabled">
     <H4>TOUR STOPS</H4>
   </a>
-  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item">Morbi leo risus</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Vestibulum at eros</a>
+  <% @highlights.each do |highlight| %>
+  	<a href="#" class="list-group-item"><%= highlight.title %></a>
+  <% end %>
 </div>
 
 		</div>
-		
+
 
 		<div class="col-xs-1" style="">&nbsp;</div>
 	</div>
-	
+
 	<!-- ------ -->
 
 
