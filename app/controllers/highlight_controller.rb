@@ -5,10 +5,7 @@ get '/highlights/:id' do
 end
 
 post '/highlights' do
-  p " * " * 30
-  p params[:audio_file]
-  p " * " * 30
-  @track = Clyp::TrackUpload.new(file: File.new(params[:audio_file][:tempfile]), title: 'Test', description: '#cool test')
+  @track = Clyp::TrackUpload.new(file: File.new(params[:audio][:tempfile]), title: 'Test', description: '#cool test')
   p @track
   p "  ! " * 30
   erb :'highlights/show'
