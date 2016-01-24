@@ -8,7 +8,7 @@ get '/categories' do
       @categories << highlight.category
     end
   end
-  erb :'categories/show'
+  erb :'categories/index'
 end
 
 get '/tours' do
