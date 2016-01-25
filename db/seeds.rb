@@ -30,7 +30,7 @@ User.create(first_name: "Keanu",
               email: "keanu@email.com",
               password: "keanurules")
 
-Tour.create(title: "Dev Bootcamp",
+Tour.create(title: "Fun Around Folsom",
               description: "All the best spots at DBC",
               duration: 2,
               distance: 1,
