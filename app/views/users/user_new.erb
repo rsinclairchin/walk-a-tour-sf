@@ -1,15 +1,93 @@
-<h1>Create User</h1>
+<!--log in page-->
 <%if flash[:errors] %>
-	<ul>
-	<% flash[:errors].each do |error| %>
-		<li><%=error%></li>
-	<%end %>
-	</ul>
+  <ul>
+  <% flash[:errors].each do |error| %>
+    <li><%=error%></li>
+  <%end %>
+  </ul>
 <%end %>
-<form action='/users' method='POST' name='signup_form'>
-	<input type='text' placeholder='First Name' name='first_name'>
-  <input type='text' placeholder='Last Name' name='last_name'>
-	<input type='text' placeholder='Email' name='email'>
-	<input type='password' placeholder='Password' name='password'>
-	<input type='submit' value='register'>
+
+<form action='/users' method='post' name='login_form'>
+<div class="container center" style="background-color: #4A4A4A;">
+
+  <div class="row" style="height:60px;">&nbsp;</div>
+
+
+  <div class="row">
+    <div class="col-xs-1">&nbsp;</div>
+    <div class="col-xs-10" style="text-align: center;">
+      <a href="#" class="text-align: center;"><img src="/images/logo_inverted.png" style="width:160px;"></a>
+    </div>
+    <div class="col-xs-1">&nbsp;</div>
+  </div>
+
+  <div class="row" style="height:30px;">&nbsp;</div>
+
+  <div class="row">
+    <div class="col-xs-1">&nbsp;</div>
+    <div class="col-xs-10" style="text-align: center;">
+
+
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1"></span>
+      <input type="text" class="form-control" placeholder="First Name" aria-describedby="sizing-addon1">
+    </div>
+
+<div class="row" style="height:30px;">&nbsp;</div>
+
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1"></span>
+      <input type="text" class="form-control" placeholder="Last Name" aria-describedby="sizing-addon1">
+    </div>
+
+
+    <div class="row" style="height:30px;">&nbsp;</div>
+
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1"></span>
+      <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon1">
+    </div>
+
+<div class="row" style="height:30px;">&nbsp;</div>
+
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1"></span>
+      <input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon1">
+    </div>
+
+      <div class="row" style="height:30px;">&nbsp;</div>
+
+      <div class="row" style="">
+        <div class="col-xs-1" style="">&nbsp;</div>
+        <div class="col-xs-10" style="text-align: center;">
+
+        <p><a class="btn btn-primary btn-lg" href="/categories" style="background-color: black;" role="button">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SIGN IN &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </a></p>
+
+        <p><a class="btn btn-primary btn-lg" href="/sessions/new" style="background-color: #3B5994;" role="button">
+        &nbsp; &nbsp; &nbsp; &nbsp; FACEBOOK &nbsp; &nbsp; &nbsp; &nbsp; </a></p>
+
+        </div>
+        <div class="col-xs-1" style="">&nbsp;</div>
+      </div>
+
+      <div class="row" style="height:30px;">&nbsp;</div>
+
+      <div class="row" style="">
+        <div class="col-xs-1" style="">&nbsp;</div>
+        <div class="col-xs-10" style="">
+          <!-- <h4 style="color:white;">Registration is Free & Quick...</h4> -->
+        </div>
+        <div class="col-xs-1" style="">&nbsp;</div>
+      </div>
+
+      <div class="row" style="height:10px;">&nbsp;</div>
+
+
+
+
+
+
+
+</div>
 </form>
