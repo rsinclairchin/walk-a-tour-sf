@@ -30,7 +30,7 @@ User.create(first_name: "Keanu",
               email: "keanu@email.com",
               password: "keanurules")
 
-Tour.create(title: "Dev Bootcamp",
+Tour.create(title: "Fun Around Folsom",
               description: "All the best spots at DBC",
               duration: 2,
               distance: 1,
@@ -40,11 +40,15 @@ Tour.create(title: "Dev Bootcamp",
 Highlight.create(title: "Dev Bootcamp",
                  category: "Schools",
                  address: "633 Folsom Street, San Francisco, CA",
+                 latitude:37.7845852,
+                 longitude: -122.3994032,
                  user_id: 1,
                  tour_id: 1)
 
   Highlight.create(title: "Thirsty Bear",
                    category: "Bars",
                    address: "661 Howard Street, San Francisco, CA",
+                   latitude: 37.7853795,
+                   longitude: -122.4016937,
                    user_id: 1,
                    tour_id: 1)
