@@ -11,9 +11,9 @@ post '/sessions' do
 		session[:id] = user.id
 		redirect '/categories'
 	else
-		flash[:errors] = ['Incorrect Username or Password']
+		flash[:errors] = ['Incorrect Email or Password']
 		status 400
-		redirect '/categories'
+		redirect '/sessions/new'
 	end
 end
 
