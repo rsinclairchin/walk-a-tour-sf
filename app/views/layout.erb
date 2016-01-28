@@ -70,24 +70,24 @@
 
 
 
-  var markers = []
-  <% highlights.each do |hl| %>
-  console.log("Hello")
-  <% if hl.latitude.is_a?(Float) %>
-  console.log("In An IF")
-    var marker=new google.maps.Marker({
-      position: new google.maps.LatLng(<%=hl.latitude%>,<%=hl.longitude%>)
-     })
-  console.log("marker")
-  markers.push(marker)
-  console.log("<%= hl.latitude %>")
-  console.log("<%= hl.longitude %>")
+  // var markers = []
+  // <% highlights.each do |hl| %>
+  // console.log("Hello")
+  // <% if hl.latitude.is_a?(Float) %>
+  // console.log("In An IF")
+  //   var marker=new google.maps.Marker({
+  //     position: new google.maps.LatLng(<%=hl.latitude%>,<%=hl.longitude%>)
+  //    })
+  // console.log("marker")
+  // markers.push(marker)
+  // console.log("<%= hl.latitude %>")
+  // console.log("<%= hl.longitude %>")
+  // // <% end %>
   // <% end %>
-  <% end %>
 
-    for (i=0;i<markers.length;i++){
-      markers[i].setMap(map)
-    }
+  //   for (i=0;i<markers.length;i++){
+  //     markers[i].setMap(map)
+  //   }
 
 }
     google.maps.event.addDomListener(window, 'load', initialize);
