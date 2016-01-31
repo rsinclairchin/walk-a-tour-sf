@@ -25,6 +25,16 @@
   </div>
 -->
 
+<%if current_user  %>
+    <h1>Logged in as <%=@current_user.first_name %></h1>
+    <a href='/users/<%=current_user.id%>/edit'>Edit User</a>
+    <form action='/sessions/<%=current_user.id%>' method='POST'>
+      <input type='hidden' name='_method' value='DELETE'>
+      <input type='submit' value='Log Out'>
+    </form>
+  <%else  %>
+    <% redirect '/' %>
+  <%end %>
 
 
 <div class="row" style="height:20px;">&nbsp;</div>
