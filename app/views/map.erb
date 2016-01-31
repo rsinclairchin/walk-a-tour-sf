@@ -1,4 +1,36 @@
 <body>
+<script type="text/javascript">
+
+function initialize() {
+
+  var mapProp = {
+    center:new google.maps.LatLng(37.7833,-122.4167),
+    zoom:11,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+  <%= @highlights.count %>
+  var markers = []
+  <% @highlights.each do |hl| %>
+    <% if hl.latitude.is_a?(Float) %>
+      var marker=new google.maps.Marker({
+            position: new google.maps.LatLng(<%=hl.latitude%>,<%=hl.longitude%>)
+          })
+          markers.push(marker)
+    <%end%>
+  <%end%>
+  for (i=0;i<markers.length;i++){
+    markers[i].setMap(map)
+  }
+
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+// google.maps.event.addDomListener(window, 'load', makeMarkers);
+
+</script>
 
 <div id="googleMap" style="width:500px;height:380px;">
 
