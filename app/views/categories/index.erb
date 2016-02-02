@@ -1,8 +1,5 @@
 <%if current_user  %>
-    <form action='/sessions/<%=current_user.id%>' method='POST'>
-      <input type='hidden' name='_method' value='DELETE'>
-      <input type='submit' value='Log Out'>
-    </form>
+
   <%else  %>
     <% redirect '/' %>
   <%end %>
@@ -25,7 +22,7 @@
       <ul class="nav navbar-nav">
         <li class="active">Logged in as <%=@current_user.first_name %></li>
         <li><a href='/users/<%=current_user.id%>/edit'>Edit User</a></li>
-        <li class="dropdown">
+        <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
@@ -35,7 +32,7 @@
             <li><a href="#">Separated link</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">One more separated link</a></li>
-          </ul>
+          </ul> -->
         </li>
       </ul>
 <!-- there is a searchbar that can be entered in here -->
