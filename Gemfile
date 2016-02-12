@@ -25,3 +25,5 @@ group :test do
 end
 
 gem 'clyp'
+
+ruby "2.2.1"
